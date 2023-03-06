@@ -1,7 +1,7 @@
 """Functions for implementing the rules of the classic arcade game Pac-Man."""
 
 
-def eat_ghost(power_pellet_active, touching_ghost):
+def eat_ghost(power_pellet_active, touching_ghost):xx
     if power_pellet_active == True & touching_ghost == True:
         return True
     else:
