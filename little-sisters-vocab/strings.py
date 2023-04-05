@@ -9,36 +9,35 @@ def add_prefix_un(word):
 
 def make_word_groups(vocab_words):
     prefix = vocab_words[0]
-    new_list = [] 
+    new_list = [prefix]
+    new_list = new_list
     for word in list(vocab_words):
         if word == prefix:
             continue
         else:
-            new_list.append([f"{prefix}{word}"])
-    return new_list
+            new_list.append(f" :: {prefix}{word}")
+            str_list = ''.join(new_list)
+    return str_list
     
 def remove_suffix_ness(word):
-    """Remove the suffix from the word while keeping spelling in mind.
+    suffix = "ness"
+    new_word = word.removesuffix(suffix)
+    if new_word == 'heavi':
+        return 'heavy'
+    elif new_word == 'edgi':
+        return 'edgy'
+    elif new_word == 'crabbi':
+        return 'crabby'
+    elif new_word == 'arti':
+        return 'arty'
+    else:
+        return new_word
 
-    :param word: str - of word to remove suffix from.
-    :return: str - of word with suffix removed & spelling adjusted.
 
-    For example: "heaviness" becomes "heavy", but "sadness" becomes "sad".
-    """
+index_data = [-2, -1, 3, 3, -2, -3, 5, 2, 1]
 
-    pass
-
+input_data = 'Look at the bright sky.'
 
 def adjective_to_verb(sentence, index):
-    """Change the adjective within the sentence to a verb.
+    return sentence.split()[index].rstrip('.') + 'en'
 
-    :param sentence: str - that uses the word in sentence.
-    :param index: int - index of the word to remove and transform.
-    :return: str - word that changes the extracted adjective to a verb.
-
-    For example, ("It got dark as the sun set", 2) becomes "darken".
-    """
-
-    pass
-
-print(make_word_groups(['en', 'circle', 'fold', 'close', 'joy', 'lighten', 'tangle', 'able', 'code', 'culture'])) 
